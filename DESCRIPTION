@@ -2,7 +2,7 @@ Package: meteorodata
 Title: Paquete Para Colaborar Con El Análisis De Datos Meteorológicos
 Version: 0.0.0.9000
 Authors@R: 
-    person("Fasolato", "Matias", , "fasolatomatias@gmail.com", role = c("aut", "cre"),
+    person("Fasolato", "Matias", "fasolatomatias@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
     person("Torregiani", "Bautista", "bautistatorregiani@gmail.com", role = c("ctb"),
            comment = c(ORCID = "YOUR-ORCID-ID"))

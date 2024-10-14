@@ -29,4 +29,6 @@ paquete:
 library(meteorodata)
 suma(10,10)
 #> [1] 20
+F_to_C(100)
+#> [1] 37.77778
 ```

@@ -36,5 +36,6 @@ Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 ```{r example}
 library(meteorodata)
 suma(10,10)
+F_to_C(100)
 ```
 

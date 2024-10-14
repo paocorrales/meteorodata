@@ -1,12 +1,13 @@
 Package: meteorodata
-Title: What the Package Does (One Line, Title Case)
+Title: Paquete Para Colaborar Con El Análisis De Datos Meteorológicos
 Version: 0.0.0.9000
 Authors@R: 
     person("Fasolato", "Matias", , "fasolatomatias@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
-    person("Torregiani", "Bautista", , "bautistatorregiani@gmail.com", role = c("ctb"),
-           comment = c(ORCID = "OTRO-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Torregiani", "Bautista", "bautistatorregiani@gmail.com", role = c("ctb"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Este paquete fue creado para realizar un trabajo universitario,
+   por lo tanto no debe ser instalado, ya que es un paquete de juguete.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8

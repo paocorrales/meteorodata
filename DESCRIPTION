@@ -1,13 +1,11 @@
 Package: meteorodata
-Title: Paquete Para Colaborar Con El Análisis De Datos Meteorológicos
+Title: Paquete Creado Con el Fin de Colaborar con el Analisis de Datos Meteorologicos.
 Version: 0.0.0.9000
 Authors@R: 
-    person("Fasolato", "Matias", "fasolatomatias@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID")),
-    person("Torregiani", "Bautista", "bautistatorregiani@gmail.com", role = c("ctb"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Este paquete fue creado para realizar un trabajo universitario,
-   por lo tanto no debe ser instalado, ya que es un paquete de juguete.
+    c(person("Matías", "Fasolato", email = "fasolatomatias@gmail.com", role = c("aut", "cre")),
+      person("Bautista", "Torregiani", email = "bautistatorregiani@gmail.com", role = "aut"))
+Description: Este paquete fue creado con el fin de entregar un trabajo de 
+    programación por lo que no debe ser instalado.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
@@ -18,3 +16,4 @@ Depends:
 LazyData: true
 URL: https://github.com/MatiFasolato/meteorodata
 BugReports: https://github.com/MatiFasolato/meteorodata/issues
+

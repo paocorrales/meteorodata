@@ -16,4 +16,7 @@ Depends:
 LazyData: true
 URL: https://github.com/MatiFasolato/meteorodata
 BugReports: https://github.com/MatiFasolato/meteorodata/issues
-
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

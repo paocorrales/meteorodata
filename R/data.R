@@ -22,4 +22,4 @@
 #' }
 #'
 #' @source Fuente: repositorio de GitHub.
-"datos_estación"
+"datos_estacion"

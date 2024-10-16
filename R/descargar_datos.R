@@ -1,4 +1,4 @@
-#' Descarga de datos de disntintas estaciones
+#' Descarga de datos de distintas estaciones
 #'
 #' La función `descargar_datos()` toma 2 parámetros y permite la lectura y/o
 #'    descarga del dataset de la estación que se solicite.
@@ -15,7 +15,7 @@
 #' @param ruta ubicación del dataset en nuestro proyecto
 #'
 #' @return
-#' Devuelve la informacion contenida en el dataset descargado
+#' Devuelve la información contenida en el dataset descargado
 #'
 #' @examples
 #' data <- descargar_datos("NH0098", "data_raw/NH0098.csv")

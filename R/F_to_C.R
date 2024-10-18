@@ -1,4 +1,4 @@
-#' Coversion de la temperatura en Fahrenheit a Centigrados
+#' Conversión de la temperatura en Fahrenheit a Centigrados
 #'
 #' La función `F_to_C()` toma un valor numérico de la temperatura en Fahrenheit y calcula la equivalencia en grados centígrados.
 #'

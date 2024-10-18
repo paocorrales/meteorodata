@@ -17,10 +17,10 @@
 #' @export
 suma <- function(x, y) {
   if (!is.numeric(x) | !is.numeric(y)) {
-    return("ERROR!, deben ser numéricos")
+    stop("ERROR!, deben ser numéricos")
   }
   if (x < 0 | y < 0) {
-    return("ERROR! Sumo únicamente números positivos")
+    stop("ERROR! Sumo únicamente números positivos")
   }
   return(x + y)
 }

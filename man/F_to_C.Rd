@@ -2,7 +2,7 @@
 % Please edit documentation in R/F_to_C.R
 \name{F_to_C}
 \alias{F_to_C}
-\title{Coversion de la temperatura en Fahrenheit a Centigrados}
+\title{Conversión de la temperatura en Fahrenheit a Centigrados}
 \usage{
 F_to_C(temp_fahrenheit)
 }

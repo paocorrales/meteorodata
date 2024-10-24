@@ -36,6 +36,3 @@ descargar_datos <- function(id_estacion, ruta) {
 
   return(datos_estacion)
 }
-
-#datos_estacion <- descargar_datos("NH0098", "data_raw/NH0098.csv")
-#usethis::use_data(datos_estacion, overwrite = TRUE)

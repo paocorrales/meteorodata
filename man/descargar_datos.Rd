@@ -2,7 +2,7 @@
 % Please edit documentation in R/descargar_datos.R
 \name{descargar_datos}
 \alias{descargar_datos}
-\title{Descarga de datos de disntintas estaciones}
+\title{Descarga de datos de distintas estaciones}
 \usage{
 descargar_datos(id_estacion, ruta)
 }
@@ -12,7 +12,7 @@ descargar_datos(id_estacion, ruta)
 \item{ruta}{ubicación del dataset en nuestro proyecto}
 }
 \value{
-Devuelve la informacion contenida en el dataset descargado
+Devuelve la información contenida en el dataset descargado
 }
 \description{
 La función \code{descargar_datos()} toma 2 parámetros y permite la lectura y/o

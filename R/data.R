@@ -22,4 +22,3 @@
 #' }
 #'
 #' @source Fuente: repositorio de GitHub.
-"datos_estacion"

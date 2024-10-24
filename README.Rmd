@@ -35,7 +35,8 @@ Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 
 ```{r example}
 library(meteorodata)
-suma(10,10)
 F_to_C(100)
+estacion_met <- descargar_datos("NH0098", "data_raw/NH0098.csv")
+head(estacion_met,5)
 ```
 

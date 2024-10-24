@@ -22,7 +22,7 @@ library(meteorodata)
 Esta es una viñeta de prueba, la cual nos permite mostrar como funciona la función `suma()` y la función `F_to_C()`:
 
 ```{r}
-suma(10,10)
 F_to_C(100)
+# descargar_datos("NH0098", "data_raw/NH0098.csv")
 ```
 

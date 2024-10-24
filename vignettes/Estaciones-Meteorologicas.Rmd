@@ -19,10 +19,15 @@ library(meteorodata)
 ```
 
 
-Esta es una viñeta de prueba, la cual nos permite mostrar como funciona la función `suma()` y la función `F_to_C()`:
+Esta viñeta de prueba nos permite mostrar como funciona la función `F_to_C()`:
 
 ```{r}
 F_to_C(100)
 # descargar_datos("NH0098", "data_raw/NH0098.csv")
+```
+
+Esta viñeta de prueba nos permite mostrar como funciona la función `C_to_F()`:
+```{r}
+C_to_F(23)
 ```
 

@@ -36,7 +36,17 @@ Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 ```{r example}
 library(meteorodata)
 F_to_C(100)
+
 estacion_met <- descargar_datos("NH0098", "data_raw/NH0098.csv")
 head(estacion_met,5)
+
+C_to_F(23)
+
+grafico <- grafico_temperatura_mensual(
+  read.csv("data_raw/NH0098.csv"),
+  colores = c("blue", "yellow"),
+  titulo = "Promedio Mensual de Temperatura para NH0098"
+)
+grafico
 ```
 

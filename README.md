@@ -29,6 +29,7 @@ paquete:
 library(meteorodata)
 F_to_C(100)
 #> [1] 37.77778
+
 estacion_met <- descargar_datos("NH0098", "data_raw/NH0098.csv")
 #> Lectura del archivo de estación 'NH0098'
 head(estacion_met,5)
@@ -98,4 +99,32 @@ head(estacion_met,5)
 #> 3                           NA               NA   0.000000          NA
 #> 4                           NA               NA   0.000000          NA
 #> 5                           NA               NA   0.000000          NA
+
+C_to_F(23)
+#> [1] 73.4
+
+grafico <- grafico_temperatura_mensual(
+  read.csv("data_raw/NH0098.csv"),
+  colores = c("blue", "yellow"),
+  titulo = "Promedio Mensual de Temperatura para NH0098"
+)
+#> 
+#> Adjuntando el paquete: 'dplyr'
+#> 
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> 
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+grafico
+#> Warning: Removed 3 rows containing missing values or values outside the scale range
+#> (`geom_line()`).
+#> `geom_line()`: Each group consists of only one observation.
+#> ℹ Do you need to adjust the group aesthetic?
+#> Warning: Removed 3 rows containing missing values or values outside the scale range
+#> (`geom_point()`).
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />

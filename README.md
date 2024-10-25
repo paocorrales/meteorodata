@@ -1,22 +1,18 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # meteorodata
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
 <!-- badges: end -->
 
-El objetivo del paquete ‘meteorodata’ es facilitar el análisis de datos
-meteorológicos y la manipulación de los mismos mediante funciones
-implementadas en este paquete.
+El objetivo del paquete ‘meteorodata’ es facilitar el análisis de datos meteorológicos y la manipulación de los mismos mediante funciones implementadas en este paquete.
 
 ## Instalación
 
-You can install the development version of meteorodata from
-[GitHub](https://github.com/) with:
+You can install the development version of meteorodata from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
@@ -25,8 +21,7 @@ pak::pak("MatiFasolato/meteorodata")
 
 ## Ejemplo
 
-Este es un ejemplo básico que muestra cómo instalar la librería del
-paquete:
+Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 
 ``` r
 library(meteorodata)
@@ -128,8 +123,6 @@ grafico <- grafico_temperatura_mensual(
 #>     intersect, setdiff, setequal, union
 grafico
 ```
-
-<img src="man/figures/README-example-1.png" width="100%" />
 
 ``` r
 

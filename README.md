@@ -127,12 +127,6 @@ grafico <- grafico_temperatura_mensual(
 #> 
 #>     intersect, setdiff, setequal, union
 grafico
-#> Warning: Removed 3 rows containing missing values or values outside the scale range
-#> (`geom_line()`).
-#> `geom_line()`: Each group consists of only one observation.
-#> ℹ Do you need to adjust the group aesthetic?
-#> Warning: Removed 3 rows containing missing values or values outside the scale range
-#> (`geom_point()`).
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />

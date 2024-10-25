@@ -19,7 +19,7 @@ F_to_C <- function(temp_fahrenheit) {
   if (!is.numeric(temp_fahrenheit)) {
 
     cli::cli_abort(c(
-      "El argumento temp_fahrenheit debe ser numérico." ,
+      "El argumento temp_fahrenheit debe ser numerico." ,
       "i" = "La variable ingresada es un {class(temp_fahrenheit)[1]}"
     ))
   }

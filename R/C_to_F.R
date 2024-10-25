@@ -19,7 +19,7 @@ C_to_F <- function(temp_centigrado) {
   if (!is.numeric(temp_centigrado)) {
 
     cli::cli_abort(c(
-      "El argumento temp_centigrado debe ser numérico." ,
+      "El argumento temp_centigrado debe ser numerico." ,
       "i" = "La variable ingresada es un {class(temp_centigrado)[1]}"
     ))
   }

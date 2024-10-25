@@ -2,7 +2,7 @@
 title: "Estaciones-Meteorologicas"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Estaciones-Meteorológicas}
+  %\VignetteIndexEntry{Estaciones-Meteorologicas}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

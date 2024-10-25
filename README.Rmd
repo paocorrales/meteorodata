@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # meteorodata
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 El objetivo del paquete 'meteorodata' es facilitar el análisis de datos meteorológicos y la manipulación de los mismos mediante funciones implementadas en este paquete.
@@ -35,6 +36,8 @@ Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 
 ```{r example}
 library(meteorodata)
+library(lubridate)
+
 F_to_C(100)
 
 estacion_met <- descargar_datos("NH0098", "data_raw/NH0098.csv")

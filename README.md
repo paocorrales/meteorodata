@@ -4,6 +4,9 @@
 # meteorodata
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 El objetivo del paquete ‘meteorodata’ es facilitar el análisis de datos
@@ -27,6 +30,13 @@ paquete:
 
 ``` r
 library(meteorodata)
+library(lubridate)
+#> 
+#> Adjuntando el paquete: 'lubridate'
+#> The following objects are masked from 'package:base':
+#> 
+#>     date, intersect, setdiff, union
+
 F_to_C(100)
 #> [1] 37.77778
 
@@ -110,11 +120,9 @@ grafico <- grafico_temperatura_mensual(
 )
 #> 
 #> Adjuntando el paquete: 'dplyr'
-#> 
 #> The following objects are masked from 'package:stats':
 #> 
 #>     filter, lag
-#> 
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
@@ -132,12 +140,6 @@ grafico
 ``` r
 
 tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
-#> 
-#> Adjuntando el paquete: 'lubridate'
-#> 
-#> The following objects are masked from 'package:base':
-#> 
-#>     date, intersect, setdiff, union
 #> # A tibble: 2 × 9
 #>   id     observaciones_temperatura proporcion_NA temperatura_minima
 #>   <chr>                      <int>         <dbl>              <dbl>

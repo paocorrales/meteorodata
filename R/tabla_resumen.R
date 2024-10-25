@@ -14,8 +14,16 @@
 #'
 #'@export
 tabla_resumen_temperatura <- function(data, estaciones) {
-  library(lubridate)
-  library(dplyr)
+
+  estaciones_existentes <- unique(data$id)
+  estaciones_no_existentes <- setdiff(estaciones, estaciones_existentes)
+
+  if (length(estaciones_no_existentes) > 0) {
+    cli::cli_abort(c("Las siguientes estaciones no existen:",
+                     paste(estaciones_no_existentes, collapse = ", ")))
+  }
+
+
   data |>
     filter(id %in% estaciones) |>
     mutate(fecha = as.Date(fecha),
@@ -33,4 +41,6 @@ tabla_resumen_temperatura <- function(data, estaciones) {
       precipitacion_acumulada_mensual = sum(precipitacion_pluviometrica, na.rm = TRUE) / 12
     )
 }
+
+
 

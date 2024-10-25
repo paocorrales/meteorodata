@@ -6,8 +6,7 @@ Authors@R:
       person("Bautista", "Torregiani", email = "bautistatorregiani@gmail.com", role = "aut"))
 Description: Este paquete fue creado con el fin de entregar un trabajo de 
     programación por lo que no debe ser instalado.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

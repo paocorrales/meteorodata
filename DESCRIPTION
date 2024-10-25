@@ -17,7 +17,8 @@ LazyData: true
 URL: https://github.com/MatiFasolato/meteorodata, https://matifasolato.github.io/meteorodata/
 BugReports: https://github.com/MatiFasolato/meteorodata/issues
 Imports:
-    dplyr
+    dplyr,
+    lubridate
 Suggests: 
     knitr,
     rmarkdown,

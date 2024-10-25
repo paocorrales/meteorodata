@@ -31,3 +31,18 @@ Esta viñeta de prueba nos permite mostrar como funciona la función `C_to_F()`:
 C_to_F(23)
 ```
 
+Esta viñeta de prueba nos permite mostrar como funciona la función `grafico_temp_mensual`:
+```{r}
+# grafico <- grafico_temperatura_mensual(
+#  read.csv("data_raw/NH0098.csv"),
+#  colores = c("blue", "yellow"),
+#  titulo = "Promedio Mensual de Temperatura para NH0098"
+#)
+#grafico
+```
+
+Esta viñeta de prueba nos permite mostrar como funciona la función `tabla_resumen`:
+```{r}
+tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
+```
+

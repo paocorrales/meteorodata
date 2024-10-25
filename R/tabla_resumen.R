@@ -14,12 +14,14 @@
 #'
 #'@export
 tabla_resumen_temperatura <- function(data, estaciones) {
-  data %>%
-    filter(id %in% estaciones) %>%
+  library(lubridate)
+  library(dplyr)
+  data |>
+    filter(id %in% estaciones) |>
     mutate(fecha = as.Date(fecha),
-           año = year(fecha),
-           mes = floor_date(fecha, "month")) %>%  # Crear la columna de mes
-    group_by(id) %>%
+           anio = year(fecha),
+           mes = floor_date(fecha, "month")) |>
+    group_by(id) |>
     summarise(
       observaciones_temperatura = sum(!is.na(temperatura_abrigo_150cm), na.rm = TRUE),
       proporcion_NA = sum(is.na(temperatura_abrigo_150cm)) / n(),

@@ -128,3 +128,22 @@ grafico
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+
+tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
+#> 
+#> Adjuntando el paquete: 'lubridate'
+#> 
+#> The following objects are masked from 'package:base':
+#> 
+#>     date, intersect, setdiff, union
+#> # A tibble: 2 × 9
+#>   id     observaciones_temperatura proporcion_NA temperatura_minima
+#>   <chr>                      <int>         <dbl>              <dbl>
+#> 1 NH0437                     18738       0.0101                 2.1
+#> 2 NH0910                     15506       0.00302                0  
+#> # ℹ 5 more variables: temperatura_maxima <dbl>, temperatura_promedio <dbl>,
+#> #   desviacion_estandar <dbl>, promedio_anual_temperatura <dbl>,
+#> #   precipitacion_acumulada_mensual <dbl>
+```

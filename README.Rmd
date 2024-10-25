@@ -48,5 +48,7 @@ grafico <- grafico_temperatura_mensual(
   titulo = "Promedio Mensual de Temperatura para NH0098"
 )
 grafico
+
+tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
 ```
 

@@ -14,7 +14,6 @@
 #'
 #'@export
 tabla_resumen_temperatura <- function(data, estaciones) {
-
   estaciones_existentes <- unique(data$id)
   estaciones_no_existentes <- setdiff(estaciones, estaciones_existentes)
 
@@ -27,10 +26,10 @@ tabla_resumen_temperatura <- function(data, estaciones) {
   data |>
     filter(id %in% estaciones) |>
     mutate(fecha = as.Date(fecha),
-           anio = year(fecha),
-           mes = floor_date(fecha, "month")) |>
+           anio = lubridate::year(fecha),
+           mes = lubridate::floor_date(fecha, "month")) |>
     group_by(id) |>
-    summarise(
+    dplyr::summarise(
       observaciones_temperatura = sum(!is.na(temperatura_abrigo_150cm), na.rm = TRUE),
       proporcion_NA = sum(is.na(temperatura_abrigo_150cm)) / n(),
       temperatura_minima = min(temperatura_abrigo_150cm, na.rm = TRUE),

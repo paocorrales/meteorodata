@@ -18,6 +18,7 @@ grafico_temperatura_mensual <- function(datos, colores = c("blue", "red", "green
 
   library(dplyr)
   library(ggplot2)
+
   # Verificar que la variable 'temperatura_abrigo_150cm' esté en el dataset
   if (!"temperatura_abrigo_150cm" %in% colnames(datos)) {
     stop("El data frame no contiene la variable 'temperatura_abrigo_150cm'")
@@ -38,14 +39,17 @@ grafico_temperatura_mensual <- function(datos, colores = c("blue", "red", "green
     datos$fecha <- as.Date(datos$fecha)
   }
 
-  # Extraer el año y el mes de la columna 'fecha'
-  datos$mes <- format(datos$fecha, "%Y-%m")  # Formato Año-Mes
+  # Extraer el mes de la columna 'fecha' sin importar el año
+  datos$mes <- format(datos$fecha, "%B")  # Nombre completo del mes
 
-  # Calcular el promedio mensual de la temperatura
-  promedio_mensual <- datos |>
-    group_by(mes) |>
-    summarise(promedio_temp = mean(temperatura_abrigo_150cm, na.rm = TRUE)) |>
-    ungroup()
+  # Calcular el promedio mensual de la temperatura, ignorando NA
+  promedio_mensual <- datos %>%
+    group_by(mes) %>%
+    summarise(promedio_temp = mean(temperatura_abrigo_150cm, na.rm = TRUE), .groups = 'drop') %>%
+    filter(!is.na(promedio_temp))  # Asegurarse de que se omitan los meses sin datos
+
+  # Ordenar los meses en el orden correcto
+  promedio_mensual$mes <- factor(promedio_mensual$mes, levels = month.name)
 
   # Crear el subtítulo con el nombre de la estación o estaciones
   estaciones_unicas <- unique(datos$id)
@@ -66,3 +70,8 @@ grafico_temperatura_mensual <- function(datos, colores = c("blue", "red", "green
 
   return(grafico)
 }
+
+
+
+
+

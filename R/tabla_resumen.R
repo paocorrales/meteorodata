@@ -23,12 +23,8 @@ tabla_resumen_temperatura <- function(data, estaciones) {
                      paste(estaciones_no_existentes, collapse = ", ")))
   }
 
-
   data |>
     filter(id %in% estaciones) |>
-    mutate(fecha = as.Date(fecha),
-           anio = year(fecha),
-           mes = floor_date(fecha, "month")) |>
     group_by(id) |>
     summarise(
       observaciones_temperatura = sum(!is.na(temperatura_abrigo_150cm), na.rm = TRUE),
@@ -37,10 +33,7 @@ tabla_resumen_temperatura <- function(data, estaciones) {
       temperatura_maxima = max(temperatura_abrigo_150cm, na.rm = TRUE),
       temperatura_promedio = mean(temperatura_abrigo_150cm, na.rm = TRUE),
       desviacion_estandar = sd(temperatura_abrigo_150cm, na.rm = TRUE),
-      promedio_anual_temperatura = mean(temperatura_abrigo_150cm, na.rm = TRUE),
-      precipitacion_acumulada_mensual = sum(precipitacion_pluviometrica, na.rm = TRUE) / 12
     )
 }
 
-
-
+tabla_resumen_temperatura(NH_unidos,"NH0098")

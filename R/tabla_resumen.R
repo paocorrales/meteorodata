@@ -23,19 +23,18 @@ tabla_resumen_temperatura <- function(data, estaciones) {
   }
 
   data |>
-    filter(id %in% estaciones) |>
-    mutate(fecha = as.Date(fecha),
-           anio = lubridate::year(fecha),
-           mes = lubridate::floor_date(fecha, "month")) |>
-    group_by(id) |>
+    dplyr::filter(id %in% estaciones) |>
+    dplyr::mutate(fecha = as.Date(fecha),
+                  anio = lubridate::year(fecha),
+                  mes = lubridate::floor_date(fecha, "month")) |>
+    dplyr::group_by(id) |>
     dplyr::summarise(
       observaciones_temperatura = sum(!is.na(temperatura_abrigo_150cm), na.rm = TRUE),
-      proporcion_NA = sum(is.na(temperatura_abrigo_150cm)) / n(),
+      proporcion_NA = sum(is.na(temperatura_abrigo_150cm)) / dplyr::n(),
       temperatura_minima = min(temperatura_abrigo_150cm, na.rm = TRUE),
       temperatura_maxima = max(temperatura_abrigo_150cm, na.rm = TRUE),
       temperatura_promedio = mean(temperatura_abrigo_150cm, na.rm = TRUE),
       desviacion_estandar = sd(temperatura_abrigo_150cm, na.rm = TRUE),
+      .groups = 'drop'
     )
 }
-
-tabla_resumen_temperatura(NH_unidos,"NH0098")

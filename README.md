@@ -1,18 +1,22 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # meteorodata
 
 <!-- badges: start -->
 
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-El objetivo del paquete ‘meteorodata’ es facilitar el análisis de datos meteorológicos y la manipulación de los mismos mediante funciones implementadas en este paquete.
+El objetivo del paquete ‘meteorodata’ es facilitar el análisis de datos
+meteorológicos y la manipulación de los mismos mediante funciones
+implementadas en este paquete.
 
 ## Instalación
 
-You can install the development version of meteorodata from [GitHub](https://github.com/) with:
+You can install the development version of meteorodata from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
@@ -21,16 +25,11 @@ pak::pak("MatiFasolato/meteorodata")
 
 ## Ejemplo
 
-Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
+Este es un ejemplo básico que muestra cómo instalar la librería del
+paquete:
 
 ``` r
 library(meteorodata)
-library(lubridate)
-#> 
-#> Adjuntando el paquete: 'lubridate'
-#> The following objects are masked from 'package:base':
-#> 
-#>     date, intersect, setdiff, union
 
 F_to_C(100)
 #> [1] 37.77778
@@ -108,31 +107,19 @@ head(estacion_met,5)
 C_to_F(23)
 #> [1] 73.4
 
-grafico <- grafico_temperatura_mensual(
-  read.csv("data_raw/NH0098.csv"),
-  colores = c("blue", "yellow"),
-  titulo = "Promedio Mensual de Temperatura para NH0098"
-)
-#> 
-#> Adjuntando el paquete: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-grafico
+grafico_temperatura_mensual(NH_unidos)
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
 
 ``` r
 
 tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
-#> # A tibble: 2 × 9
+#> # A tibble: 2 × 7
 #>   id     observaciones_temperatura proporcion_NA temperatura_minima
 #>   <chr>                      <int>         <dbl>              <dbl>
 #> 1 NH0437                     18738       0.0101                 2.1
 #> 2 NH0910                     15506       0.00302                0  
-#> # ℹ 5 more variables: temperatura_maxima <dbl>, temperatura_promedio <dbl>,
-#> #   desviacion_estandar <dbl>, promedio_anual_temperatura <dbl>,
-#> #   precipitacion_acumulada_mensual <dbl>
+#> # ℹ 3 more variables: temperatura_maxima <dbl>, temperatura_promedio <dbl>,
+#> #   desviacion_estandar <dbl>
 ```

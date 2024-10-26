@@ -36,7 +36,6 @@ Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 
 ```{r example}
 library(meteorodata)
-library(lubridate)
 
 F_to_C(100)
 
@@ -45,12 +44,7 @@ head(estacion_met,5)
 
 C_to_F(23)
 
-grafico <- grafico_temperatura_mensual(
-  read.csv("data_raw/NH0098.csv"),
-  colores = c("blue", "yellow"),
-  titulo = "Promedio Mensual de Temperatura para NH0098"
-)
-grafico
+grafico_temperatura_mensual(NH_unidos)
 
 tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
 ```

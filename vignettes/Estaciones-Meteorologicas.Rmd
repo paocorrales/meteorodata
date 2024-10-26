@@ -16,8 +16,6 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(meteorodata)
-library(dplyr)
-library(lubridate)
 ```
 
 
@@ -25,7 +23,6 @@ Esta viñeta de prueba nos permite mostrar como funciona la función `F_to_C()`:
 
 ```{r}
 F_to_C(100)
-# descargar_datos("NH0098", "data_raw/NH0098.csv")
 ```
 
 Esta viñeta de prueba nos permite mostrar como funciona la función `C_to_F()`:
@@ -35,12 +32,7 @@ C_to_F(23)
 
 Esta viñeta de prueba nos permite mostrar como funciona la función `grafico_temp_mensual`:
 ```{r}
-# grafico <- grafico_temperatura_mensual(
-#  read.csv("data_raw/NH0098.csv"),
-#  colores = c("blue", "yellow"),
-#  titulo = "Promedio Mensual de Temperatura para NH0098"
-#)
-#grafico
+grafico_temperatura_mensual(NH_unidos)
 ```
 
 Esta viñeta de prueba nos permite mostrar como funciona la función `tabla_resumen`:

@@ -17,7 +17,8 @@ URL: https://github.com/MatiFasolato/meteorodata, https://matifasolato.github.io
 BugReports: https://github.com/MatiFasolato/meteorodata/issues
 Imports:
     dplyr,
-    lubridate
+    lubridate,
+    ggplot2
 Suggests: 
     knitr,
     rmarkdown,

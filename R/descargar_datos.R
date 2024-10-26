@@ -20,7 +20,6 @@
 #' @examples
 #' data <- descargar_datos("NH0098", "data_raw/NH0098.csv")
 #' @export
-
 descargar_datos <- function(id_estacion, ruta) {
 
   estacion_url <- paste0("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/", id_estacion ,".csv")

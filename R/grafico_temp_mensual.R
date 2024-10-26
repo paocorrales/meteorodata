@@ -4,74 +4,59 @@
 #' devuelve un gráfico con el promedio mensual de la temperatura de abrigo
 #' a 150 cm.
 #'
-#' @param datos un data frame con los datos de las estaciones.
+#' @param datos el data frame que contiene la información de todas las estaciones meteorológicas.
 #' @param colores un vector de colores para utilizar en el gráfico.
 #' @param titulo un string con el título del gráfico. Si no se define, el título por defecto será "Temperatura".
 #'
 #' @return Un gráfico con el promedio mensual de la temperatura.
 #'
 #' @examples
-#' # Suponiendo que 'data' es un data frame con las estaciones NH0098 y NH0437:
-#' grafico_temperatura_mensual(data, colores = c("blue", "red"), titulo = "Promedio Mensual de Temperatura")
+#' grafico_temperatura_mensual(NH_unidos)
 #' @export
 grafico_temperatura_mensual <- function(datos, colores = c("blue", "red", "green"), titulo = "Temperatura") {
-
-  library(dplyr)
-  library(ggplot2)
-
-  # Verificar que la variable 'temperatura_abrigo_150cm' esté en el dataset
+  # Verificar columnas necesarias
   if (!"temperatura_abrigo_150cm" %in% colnames(datos)) {
     stop("El data frame no contiene la variable 'temperatura_abrigo_150cm'")
   }
 
-  # Verificar que la columna 'fecha' exista para poder agrupar por mes
   if (!"fecha" %in% colnames(datos)) {
     stop("El data frame no contiene la columna 'fecha'.")
   }
 
-  # Verificar que la columna 'id' exista para identificar la estación
   if (!"id" %in% colnames(datos)) {
     stop("El data frame no contiene la columna 'id' para identificar la estación.")
   }
 
-  # Asegurarse de que la columna 'fecha' sea de tipo Date
+  # Convertir la columna 'fecha' a tipo Date si no lo es
   if (!inherits(datos$fecha, "Date")) {
     datos$fecha <- as.Date(datos$fecha)
   }
 
-  # Extraer el mes de la columna 'fecha' sin importar el año
-  datos$mes <- format(datos$fecha, "%B")  # Nombre completo del mes
+  # Extraer el mes de la fecha
+  datos$mes <- lubridate::month(datos$fecha)
 
-  # Calcular el promedio mensual de la temperatura, ignorando NA
-  promedio_mensual <- datos %>%
-    group_by(mes) %>%
-    summarise(promedio_temp = mean(temperatura_abrigo_150cm, na.rm = TRUE), .groups = 'drop') %>%
-    filter(!is.na(promedio_temp))  # Asegurarse de que se omitan los meses sin datos
+  # Calcular la temperatura media mensual agrupada por id y mes
+  promedio_mensual <- datos |>
+    dplyr::group_by(id, mes) |>
+    dplyr::summarise(temperatura_media = mean(temperatura_abrigo_150cm, na.rm = TRUE), .groups = 'drop')
 
-  # Ordenar los meses en el orden correcto
-  promedio_mensual$mes <- factor(promedio_mensual$mes, levels = month.name)
+  # Verificar si hay datos para graficar
+  if (nrow(promedio_mensual) == 0) {
+    stop("No hay datos disponibles para graficar.")
+  }
 
-  # Crear el subtítulo con el nombre de la estación o estaciones
-  estaciones_unicas <- unique(datos$id)
-  subtitulo <- paste("Datos de la(s) estación(es):", paste(estaciones_unicas, collapse = ", "))
-
-  # Generar el gráfico
-  grafico <- ggplot(promedio_mensual, aes(x = mes, y = promedio_temp)) +
-    geom_line(color = colores[1], size = 1.2) +  # Color de la línea principal
-    geom_point(color = colores[2], size = 3) +   # Color de los puntos
-    labs(
+  # Crear el gráfico
+  grafico <- ggplot2::ggplot(promedio_mensual, ggplot2::aes(x = factor(mes), y = temperatura_media, group = id, color = id)) +
+    ggplot2::geom_line(size = 1.2) +
+    ggplot2::geom_point(size = 3) +
+    ggplot2::labs(
       title = titulo,
-      subtitle = subtitulo,  # Agregar el subtítulo
       x = "Mes",
-      y = "Promedio Temperatura (°C)"
+      y = "Temperatura Media (°C)"
     ) +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotar los textos del eje x para mejor legibilidad
+    ggplot2::scale_x_discrete(labels = month.name) +  # Etiquetas de los meses
+    ggplot2::theme_minimal() +
+    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
 
   return(grafico)
 }
-
-
-
-
-

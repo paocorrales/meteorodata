@@ -19,6 +19,11 @@
 #' @format Los datos son obtenidos de un repositorio de GitHub.
 #' \describe{
 #' \item{NH0098}{muestra de datos de la estación "NH0098"}
+#' \item{NH0437}{muestra de datos de la estación "NH0098"}
+#' \item{NH0046}{muestra de datos de la estación "NH0098"}
+#' \item{NH0910}{muestra de datos de la estación "NH0098"}
+#' \item{NH0472}{muestra de datos de la estación "NH0098"}
+#' \item{NH_unidos}{muestra datos de todas las estaciones}
 #' }
 #'
 #' @source Fuente: repositorio de GitHub.

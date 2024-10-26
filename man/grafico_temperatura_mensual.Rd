@@ -11,7 +11,7 @@ grafico_temperatura_mensual(
 )
 }
 \arguments{
-\item{datos}{un data frame con los datos de las estaciones.}
+\item{datos}{el data frame que contiene la información de todas las estaciones meteorológicas.}
 
 \item{colores}{un vector de colores para utilizar en el gráfico.}
 
@@ -26,6 +26,5 @@ devuelve un gráfico con el promedio mensual de la temperatura de abrigo
 a 150 cm.
 }
 \examples{
-# Suponiendo que 'data' es un data frame con las estaciones NH0098 y NH0437:
-grafico_temperatura_mensual(data, colores = c("blue", "red"), titulo = "Promedio Mensual de Temperatura")
+grafico_temperatura_mensual(NH_unidos)
 }

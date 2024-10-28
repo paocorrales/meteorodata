@@ -34,7 +34,7 @@ tabla_resumen_temperatura <- function(data, estaciones) {
       temperatura_minima = min(temperatura_abrigo_150cm, na.rm = TRUE),
       temperatura_maxima = max(temperatura_abrigo_150cm, na.rm = TRUE),
       temperatura_promedio = mean(temperatura_abrigo_150cm, na.rm = TRUE),
-      desviacion_estandar = sd(temperatura_abrigo_150cm, na.rm = TRUE),
+      desviacion_estandar = stats::sd(temperatura_abrigo_150cm, na.rm = TRUE),
       .groups = 'drop'
     )
 }

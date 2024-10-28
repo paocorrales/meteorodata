@@ -19,7 +19,9 @@ Imports:
     dplyr,
     lubridate,
     ggplot2,
-    cli
+    cli,
+    utils,
+    stats
 Suggests: 
     knitr,
     rmarkdown,

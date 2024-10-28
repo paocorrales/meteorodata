@@ -27,11 +27,11 @@ descargar_datos <- function(id_estacion) {
   ruta <- paste0(tempdir(), "/", id_estacion, ".csv")
 
   if (file.exists(ruta)) {
-    datos_estacion <- read.csv(ruta)
+    datos_estacion <- utils::read.csv(ruta)
     cli::cli_inform("Lectura del archivo de estacion '{id_estacion}' desde el directorio temporal.")
   } else {
-    download.file(estacion_url, ruta)
-    datos_estacion <- read.csv(ruta)
+    utils::download.file(estacion_url, ruta)
+    datos_estacion <- utils::read.csv(ruta)
     cli::cli_inform("Descargando y leyendo el archivo de estacion '{id_estacion}' en el directorio temporal.")
   }
 

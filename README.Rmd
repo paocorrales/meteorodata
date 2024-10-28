@@ -39,7 +39,7 @@ library(meteorodata)
 
 F_to_C(100)
 
-estacion_met <- descargar_datos("NH0098", "data_raw/NH0098.csv")
+estacion_met <- descargar_datos("NH0098")
 head(estacion_met,5)
 
 C_to_F(23)

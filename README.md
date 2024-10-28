@@ -34,8 +34,9 @@ library(meteorodata)
 F_to_C(100)
 #> [1] 37.77778
 
-estacion_met <- descargar_datos("NH0098", "data_raw/NH0098.csv")
-#> Lectura del archivo de estación 'NH0098'
+estacion_met <- descargar_datos("NH0098")
+#> Descargando y leyendo el archivo de estacion 'NH0098' en el directorio
+#> temporal.
 head(estacion_met,5)
 #>       id      fecha temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima
 #> 1 NH0098 1956-04-01                    13.65                            21.6

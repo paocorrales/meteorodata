@@ -12,18 +12,18 @@
 "datos"
 
 
-#' Segundo conjunto de datos
+#' Datos de estaciones meteorológicas
 #'
-#' Los datos contienen información de las distintas estaciones meteorológicas.
+#' Este conjunto de datos incluye muestras de diferentes estaciones meteorológicas, obtenidas de un repositorio en GitHub.
 #'
-#' @format Los datos son obtenidos de un repositorio de GitHub.
+#' @format Un dataframe con las siguientes estaciones y columnas:
 #' \describe{
-#' \item{NH0098}{muestra de datos de la estación "NH0098"}
-#' \item{NH0437}{muestra de datos de la estación "NH0098"}
-#' \item{NH0046}{muestra de datos de la estación "NH0098"}
-#' \item{NH0910}{muestra de datos de la estación "NH0098"}
-#' \item{NH0472}{muestra de datos de la estación "NH0098"}
-#' \item{NH_unidos}{muestra datos de todas las estaciones}
+#'   \item{NH0098}{Datos de la estación meteorológica "NH0098".}
+#'   \item{NH0437}{Datos de la estación meteorológica "NH0437".}
+#'   \item{NH0046}{Datos de la estación meteorológica "NH0046".}
+#'   \item{NH0910}{Datos de la estación meteorológica "NH0910".}
+#'   \item{NH0472}{Datos de la estación meteorológica "NH0472".}
+#'   \item{NH_unidos}{Datos combinados de todas las estaciones.}
 #' }
-#'
-#' @source Fuente: repositorio de GitHub.
+#' @source Repositorio de GitHub.
+"descargar_datos"

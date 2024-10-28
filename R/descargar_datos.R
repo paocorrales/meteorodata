@@ -12,25 +12,27 @@
 #'
 #'
 #' @param id_estacion un string conformado por numeros y letras
-#' @param ruta ubicación del dataset en nuestro proyecto
 #'
 #' @return
 #' Devuelve la informacion contenida en el dataset descargado
 #'
 #' @examples
-#' data <- descargar_datos("NH0098", "data_raw/NH0098.csv")
+#' data <- descargar_datos("NH0098")
 #' @export
-descargar_datos <- function(id_estacion, ruta) {
+descargar_datos <- function(id_estacion) {
+  # URL de la estación
+  estacion_url <- paste0("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/", id_estacion, ".csv")
 
-  estacion_url <- paste0("https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/", id_estacion ,".csv")
+  # Generar ruta temporal
+  ruta <- paste0(tempdir(), "/", id_estacion, ".csv")
 
   if (file.exists(ruta)) {
     datos_estacion <- read.csv(ruta)
-    cli::cli_inform("Lectura del archivo de estacion '{id_estacion}'")
+    cli::cli_inform("Lectura del archivo de estacion '{id_estacion}' desde el directorio temporal.")
   } else {
     download.file(estacion_url, ruta)
     datos_estacion <- read.csv(ruta)
-    cli::cli_inform("Descargando y leyendo el archivo de estacion '{id_estacion}'")
+    cli::cli_inform("Descargando y leyendo el archivo de estacion '{id_estacion}' en el directorio temporal.")
   }
 
   return(datos_estacion)

@@ -4,7 +4,7 @@
 #'
 #' Estos son detalles extras de la función.
 #'
-#' @param temp_fahrenheit un vector numérico de la temperatura en Centigrados
+#' @param temp_centigrado un vector numérico de la temperatura en Centigrados
 #'
 #' @return
 #' Un vector numérico de la temperatura en grados fahrenheit.

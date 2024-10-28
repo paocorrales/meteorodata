@@ -1,7 +1,7 @@
 #' Descarga de datos de distintas estaciones
 #'
-#' La función `descargar_datos()` toma 2 parámetros y permite la lectura y/o
-#'    descarga del dataset de la estación que se solicite.
+#' La funcion `descargar_datos()` toma 2 parametros y permite la lectura y/o
+#'    descarga del dataset de la estacion que se solicite.
 #'
 #' Estaciones Disponibles:
 #' - NH0437
@@ -15,7 +15,7 @@
 #' @param ruta ubicación del dataset en nuestro proyecto
 #'
 #' @return
-#' Devuelve la información contenida en el dataset descargado
+#' Devuelve la informacion contenida en el dataset descargado
 #'
 #' @examples
 #' data <- descargar_datos("NH0098", "data_raw/NH0098.csv")
@@ -26,11 +26,11 @@ descargar_datos <- function(id_estacion, ruta) {
 
   if (file.exists(ruta)) {
     datos_estacion <- read.csv(ruta)
-    cli::cli_inform("Lectura del archivo de estación '{id_estacion}'")
+    cli::cli_inform("Lectura del archivo de estacion '{id_estacion}'")
   } else {
     download.file(estacion_url, ruta)
     datos_estacion <- read.csv(ruta)
-    cli::cli_inform("Descargando y leyendo el archivo de estación '{id_estacion}'")
+    cli::cli_inform("Descargando y leyendo el archivo de estacion '{id_estacion}'")
   }
 
   return(datos_estacion)

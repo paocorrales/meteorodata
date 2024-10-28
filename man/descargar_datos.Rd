@@ -12,11 +12,11 @@ descargar_datos(id_estacion, ruta)
 \item{ruta}{ubicación del dataset en nuestro proyecto}
 }
 \value{
-Devuelve la información contenida en el dataset descargado
+Devuelve la informacion contenida en el dataset descargado
 }
 \description{
-La función \code{descargar_datos()} toma 2 parámetros y permite la lectura y/o
-descarga del dataset de la estación que se solicite.
+La funcion \code{descargar_datos()} toma 2 parametros y permite la lectura y/o
+descarga del dataset de la estacion que se solicite.
 }
 \details{
 Estaciones Disponibles:

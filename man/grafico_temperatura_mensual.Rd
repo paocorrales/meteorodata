@@ -2,7 +2,7 @@
 % Please edit documentation in R/grafico_temp_mensual.R
 \name{grafico_temperatura_mensual}
 \alias{grafico_temperatura_mensual}
-\title{Gráfico del promedio mensual de la temperatura de abrigo}
+\title{Grafico del promedio mensual de la temperatura de abrigo}
 \usage{
 grafico_temperatura_mensual(
   datos,
@@ -11,18 +11,18 @@ grafico_temperatura_mensual(
 )
 }
 \arguments{
-\item{datos}{el data frame que contiene la información de todas las estaciones meteorológicas.}
+\item{datos}{el data frame que contiene la informacion de todas las estaciones meteorologicas.}
 
-\item{colores}{un vector de colores para utilizar en el gráfico.}
+\item{colores}{un vector de colores para utilizar en el grafico.}
 
-\item{titulo}{un string con el título del gráfico. Si no se define, el título por defecto será "Temperatura".}
+\item{titulo}{un string con el titulo del grafico. Si no se define, el titulo por defecto sera "Temperatura".}
 }
 \value{
-Un gráfico con el promedio mensual de la temperatura.
+Un grafico con el promedio mensual de la temperatura.
 }
 \description{
-Esta función recibe un data frame con datos de una o más estaciones y
-devuelve un gráfico con el promedio mensual de la temperatura de abrigo
+Esta funcion recibe un data frame con datos de una o mas estaciones y
+devuelve un grafico con el promedio mensual de la temperatura de abrigo
 a 150 cm.
 }
 \examples{

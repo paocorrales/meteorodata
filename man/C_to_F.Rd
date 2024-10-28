@@ -7,7 +7,7 @@
 C_to_F(temp_centigrado)
 }
 \arguments{
-\item{temp_fahrenheit}{un vector numérico de la temperatura en Centigrados}
+\item{temp_centigrado}{un vector numérico de la temperatura en Centigrados}
 }
 \value{
 Un vector numérico de la temperatura en grados fahrenheit.

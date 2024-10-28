@@ -1,5 +1,5 @@
 Package: meteorodata
-Title: Paquete Creado Con el Fin de Colaborar con el Analisis de Datos Meteorologicos.
+Title: Paquete Creado Con el Fin de Colaborar con el Analisis de Datos Meteorologicos
 Version: 0.0.0.9000
 Authors@R: 
     c(person("Matías", "Fasolato", email = "fasolatomatias@gmail.com", role = c("aut", "cre")),
@@ -18,7 +18,8 @@ BugReports: https://github.com/MatiFasolato/meteorodata/issues
 Imports:
     dplyr,
     lubridate,
-    ggplot2
+    ggplot2,
+    cli
 Suggests: 
     knitr,
     rmarkdown,

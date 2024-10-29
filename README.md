@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# meteorodata
+# meteorodata <img src='images/meteoro.jpg' align="right" height="139" />
 
 <!-- badges: start -->
 
@@ -36,7 +36,7 @@ F_to_C(100)
 #> [1] 37.77778
 
 estacion_met <- descargar_datos("NH0098")
-#> Descargando y leyendo el archivo de estacion 'NH0098' en el directorio
+#> Descargando y leyendo el archivo de estación 'NH0098' en el directorio
 #> temporal.
 head(estacion_met,5)
 #>       id      fecha temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima

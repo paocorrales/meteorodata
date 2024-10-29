@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# meteorodata <img src='images/meteoro.jpg' align="right" height="139" />
+# meteorodata <img src='images/meteoro.png' align="right" height="139" />
 
 <!-- badges: start -->
 

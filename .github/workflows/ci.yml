@@ -1,34 +1,31 @@
-name: CI
+name: R-CMD-check
 
 on:
   push:
-    branches: [main, master]
+    branches: [ main ]
   pull_request:
-    branches: [main, master]
+    branches: [ main ]
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
 
       - name: Install dependencies
         run: |
-          install.packages('remotes')
-          remotes::install_deps(dependencies = TRUE)
-          install.packages('covr')  # Instala covr para el reporte de cobertura
+          R -e 'install.packages("remotes")'
+          R -e 'remotes::install_deps(dependencies = TRUE)'
 
-      - name: Run tests
+      - name: Install covr
         run: |
-          R -e "devtools::check()"
+          R -e 'install.packages("covr")'
 
-      - name: Upload coverage to Codecov
-        if: success()  # Solo sube el reporte si las pruebas pasan
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run tests and coverage
         run: |
-          R -e "covr::codecov()"
+          R -e 'covr::codecov()'

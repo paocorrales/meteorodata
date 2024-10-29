@@ -1,35 +1,19 @@
-name: R-CMD-check
-
 on:
   push:
-    branches: [ main ]
+    branches:
+      - master  # Cambiado de main a master
   pull_request:
-    branches: [ main ]
-
+    branches:
+      - master  # Cambiado de main a master
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set up R
+      - name: Install R
         uses: r-lib/actions/setup-r@v2
-
       - name: Install dependencies
-        run: |
-          R -e 'install.packages("remotes")'
-          R -e 'remotes::install_deps(dependencies = TRUE)'
-
-      - name: Install the package
-        run: |
-          R -e 'remotes::install_local(".")'  # Instala tu paquete
-
-      - name: Run tests
-        run: |
-          R -e 'library(testthat); test_dir("tests")'
-
-      - name: Run coverage
-        run: |
-          R -e 'covr::codecov()'
+        run: R -e 'install.packages("covr")'
+      - name: Run tests with coverage
+        run: R -e 'covr::codecov()'  # Esto sube los informes a Codecov

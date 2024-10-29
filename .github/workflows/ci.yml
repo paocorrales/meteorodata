@@ -22,10 +22,14 @@ jobs:
           R -e 'install.packages("remotes")'
           R -e 'remotes::install_deps(dependencies = TRUE)'
 
-      - name: Install covr
+      - name: Install the package
         run: |
-          R -e 'install.packages("covr")'
+          R -e 'remotes::install_local(".")'  # Instala tu paquete
 
-      - name: Run tests and coverage
+      - name: Run tests
+        run: |
+          R -e 'library(testthat); test_dir("tests")'
+
+      - name: Run coverage
         run: |
           R -e 'covr::codecov()'

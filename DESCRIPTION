@@ -22,7 +22,9 @@ Imports:
     cli,
     utils,
     stats
-Suggests: 
+Suggests:
+    withr,
+    mockery,
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)

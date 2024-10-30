@@ -31,8 +31,8 @@ tabla_resumen_temperatura <- function(data, estaciones) {
     dplyr::summarise(
       observaciones_temperatura = sum(!is.na(temperatura_abrigo_150cm), na.rm = TRUE),
       proporcion_NA = sum(is.na(temperatura_abrigo_150cm)) / dplyr::n(),
-      temperatura_minima = min(temperatura_abrigo_150cm, na.rm = TRUE),
-      temperatura_maxima = max(temperatura_abrigo_150cm, na.rm = TRUE),
+      temperatura_minima = min(temperatura_abrigo_150cm_minima, na.rm = TRUE),
+      temperatura_maxima = max(temperatura_abrigo_150cm_maxima, na.rm = TRUE),
       temperatura_promedio = mean(temperatura_abrigo_150cm, na.rm = TRUE),
       desviacion_estandar = stats::sd(temperatura_abrigo_150cm, na.rm = TRUE),
       .groups = 'drop'

@@ -38,3 +38,4 @@ tabla_resumen_temperatura <- function(data, estaciones) {
       .groups = 'drop'
     )
 }
+

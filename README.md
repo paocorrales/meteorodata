@@ -44,26 +44,37 @@ library(meteorodata)
 
 ## Uso de las funciones:
 
-```{r}
+``` r
 F_to_C(100)
+#> [1] 37.77778
 ```
 
-```{r}
+``` r
 estacion_met <- descargar_datos("NH0098")
+#> Descargando y leyendo el archivo de estacion 'NH0098' en el directorio
+#> temporal.
 ```
 
-```{r}
+``` r
 C_to_F(23)
+#> [1] 73.4
 ```
 
-```{r}
+``` r
 grafico_temperatura_mensual(NH_unidos)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%"/>
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%"/>
 
-```{r}
+``` r
 tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
+#> # A tibble: 2 × 7
+#>   id     observaciones_temperatura proporcion_NA temperatura_minima
+#>   <chr>                      <int>         <dbl>              <dbl>
+#> 1 NH0437                     18738       0.0101                -5.6
+#> 2 NH0910                     15506       0.00302               -8.5
+#> # ℹ 3 more variables: temperatura_maxima <dbl>, temperatura_promedio <dbl>,
+#> #   desviacion_estandar <dbl>
 ```
 
 ### Autores del paquete:

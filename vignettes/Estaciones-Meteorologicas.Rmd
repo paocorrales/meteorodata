@@ -14,34 +14,33 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Introducción al uso del paquete:
+
+A continuación detallaremos el uso adecuado de las funciones del paquete `meteorodata`.
+
+1- Primero debedemos de importar la librería de nuestro paquete
+
 ```{r setup}
 library(meteorodata)
 ```
 
-Esta viñeta de prueba nos muestracómo se utiliza la función `descargar_datos()`:
+2- Segundo debemos hacer una descarga del dataset que deseamos analizar. Para esto solo basta con llamar a la funcion `descargar_datos()`y asiganarle como parámetro el nombre del dataset.
+
 ```{r}
 estacion_prueba <- descargar_datos("NH0098")
 head(estacion_prueba,5)
 ```
 
-Esta viñeta de prueba nos permite mostrar como funciona la función `F_to_C()`:
+3- Una vez realizada la descarga de el/los dataset/s podemos hacer uso de las funciones `grafico_temperatura_mensual() y tabla_resumen_temperatura()`.
 
-```{r}
-F_to_C(100)
-```
+`grafico_temperatura_mensual`: Mostrará un gráfico con el promedio mensual de la temperatura de abrigo a 150 cm.
 
-Esta viñeta de prueba nos permite mostrar como funciona la función `C_to_F()`:
-```{r}
-C_to_F(23)
-```
-
-Esta viñeta de prueba nos permite mostrar como funciona la función `grafico_temp_mensual`:
 ```{r}
 grafico_temperatura_mensual(NH_unidos)
 ```
 
-Esta viñeta de prueba nos permite mostrar como funciona la función `tabla_resumen`:
+`tabla_resumen_temperatura`: Calcula medidas significativas segun el/los dataset/s elegido de las estaciones meteorológicas.
+
 ```{r}
 tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
 ```
-

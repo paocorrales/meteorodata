@@ -13,7 +13,7 @@ descargar_datos(id_estacion)
 Devuelve la informacion contenida en el dataset descargado
 }
 \description{
-La funcion \code{descargar_datos()} toma 2 parametros y permite la lectura y/o
+La funcion \code{descargar_datos()} toma 1 parametro y permite la lectura y/o
 descarga del dataset de la estacion que se solicite.
 }
 \details{

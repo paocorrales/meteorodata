@@ -1,130 +1,93 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# meteorodata <img src='man/figures/meteoro.png' align="right" height="139" />
+# meteorodata <img src="man/figures/meteoro.png" align="right" width="130"/>
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/MatiFasolato/meteorodata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatiFasolato/meteorodata/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/MatiFasolato/meteorodata/graph/badge.svg)](https://app.codecov.io/gh/MatiFasolato/meteorodata)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![R-CMD-check](https://github.com/MatiFasolato/meteorodata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MatiFasolato/meteorodata/actions/workflows/R-CMD-check.yaml) [![Codecov test coverage](https://codecov.io/gh/MatiFasolato/meteorodata/graph/badge.svg)](https://app.codecov.io/gh/MatiFasolato/meteorodata)
 
 <!-- badges: end -->
 
-El objetivo del paquete ‘meteorodata’ es facilitar el análisis de datos
-meteorológicos y la manipulación de los mismos mediante funciones
-implementadas en este paquete.
+# Objetivo:
+
+El objetivo del paquete ‘meteorodata’ es facilitar el análisis de datos meteorológicos y la manipulación de los mismos mediante funciones implementadas en este paquete.
 
 ## Instalación
 
-You can install the development version of meteorodata from
-[GitHub](https://github.com/) with:
+You can install the development version of meteorodata from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
 pak::pak("MatiFasolato/meteorodata")
 ```
 
+### Descarga de Datos:
+
+Para llevar a cabo la descarga de los datasets referidos a las estaciones meteorologicas implementamos la siguiente funcion.
+
+**`descargar_datos`**: toma un parametro correspondiente a la estación meteorológica y permite la lectura y/o descarga del dataset de la estación que se solicite.
+
+### Funciones:
+
+1.  **`C_to_F`**: Toma un valor numérico de la temperatura en Centigrados y calcula la equivalencia en grados fahrenheit.
+2.  **`F_to_C`** : Toma un valor numérico de la temperatura en Fahrenheit y calcula la equivalencia en grados centígrados.
+3.  **`tabla_resumen_temperatura`**: Recibe un dataframe que contiene informacion acerca de todas las estaciones meteorologicas y de acuerdo a la estacion especificada calcula medidas significativas.
+4.  **`grafico_temperatura_mensual`**: Recibe un data frame con datos de una o mas estaciones y devuelve un grafico con el promedio mensual de la temperatura de abrigo a 150 cm.
+
 ## Ejemplo
 
-Este es un ejemplo básico que muestra cómo instalar la librería del
-paquete:
+Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 
 ``` r
 library(meteorodata)
+```
 
+## Uso de las funciones:
+
+```{r}
 F_to_C(100)
-#> [1] 37.77778
+```
 
+```{r}
 estacion_met <- descargar_datos("NH0098")
-#> Descargando y leyendo el archivo de estacion 'NH0098' en el directorio
-#> temporal.
-head(estacion_met,5)
-#>       id      fecha temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima
-#> 1 NH0098 1956-04-01                    13.65                            21.6
-#> 2 NH0098 1956-04-02                    16.75                            23.6
-#> 3 NH0098 1956-04-03                    19.00                            25.9
-#> 4 NH0098 1956-04-04                    17.55                            23.6
-#> 5 NH0098 1956-04-05                    20.00                            27.2
-#>   temperatura_abrigo_150cm_minima temperatura_intemperie_5cm_minima
-#> 1                             5.7                               4.1
-#> 2                             9.9                               8.4
-#> 3                            12.1                              10.8
-#> 4                            11.5                              10.5
-#> 5                            12.8                              11.1
-#>   temperatura_intemperie_50cm_minima temperatura_suelo_5cm_media
-#> 1                                 NA                          NA
-#> 2                                 NA                          NA
-#> 3                                 NA                          NA
-#> 4                                 NA                          NA
-#> 5                                 NA                          NA
-#>   temperatura_suelo_10cm_media temperatura_inte_5cm
-#> 1                           NA                   NA
-#> 2                           NA                   NA
-#> 3                           NA                   NA
-#> 4                           NA                   NA
-#> 5                           NA                   NA
-#>   temperatura_intemperie_150cm_minima humedad_suelo precipitacion_pluviometrica
-#> 1                                  NA            NA                           0
-#> 2                                  NA            NA                           0
-#> 3                                  NA            NA                           0
-#> 4                                  NA            NA                           0
-#> 5                                  NA            NA                           0
-#>   granizo nieve heliofania_efectiva heliofania_relativa tesion_vapor_media
-#> 1       0     0                  NA                  NA                8.3
-#> 2       0     0                  NA                  NA               10.4
-#> 3       0     0                  NA                  NA               13.2
-#> 4       0     0                  NA                  NA               10.6
-#> 5       0     0                  NA                  NA               11.6
-#>   humedad_media humedad_media_8_14_20 rocio_medio duracion_follaje_mojado
-#> 1            NA                    62         4.3                      NA
-#> 2            NA                    71         7.5                      NA
-#> 3            NA                    78        11.1                      NA
-#> 4            NA                    70         7.8                      NA
-#> 5            NA                    66         9.2                      NA
-#>   velocidad_viento_200cm_media direccion_viento_200cm
-#> 1                          3.2                     NA
-#> 2                         10.4                     NA
-#> 3                          7.2                     NA
-#> 4                          7.2                     NA
-#> 5                          5.6                     NA
-#>   velocidad_viento_1000cm_media direccion_viento_1000cm velocidad_viento_maxima
-#> 1                             4                                              NA
-#> 2                            13                                              NA
-#> 3                             9                                              NA
-#> 4                             9                                              NA
-#> 5                             7                                              NA
-#>   presion_media radiacion_global radiacion_neta evaporacion_tanque
-#> 1            NA               NA             NA                 NA
-#> 2            NA               NA             NA                 NA
-#> 3            NA               NA             NA                 NA
-#> 4            NA               NA             NA                 NA
-#> 5            NA               NA             NA                 NA
-#>   evapotranspiracion_potencial profundidad_napa horas_frio unidad_frio
-#> 1                           NA               NA   1.962264          NA
-#> 2                           NA               NA   0.000000          NA
-#> 3                           NA               NA   0.000000          NA
-#> 4                           NA               NA   0.000000          NA
-#> 5                           NA               NA   0.000000          NA
+```
 
+```{r}
 C_to_F(23)
-#> [1] 73.4
+```
 
+```{r}
 grafico_temperatura_mensual(NH_unidos)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-example-1.png" width="100%"/>
 
-``` r
-
+```{r}
 tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
-#> # A tibble: 2 × 7
-#>   id     observaciones_temperatura proporcion_NA temperatura_minima
-#>   <chr>                      <int>         <dbl>              <dbl>
-#> 1 NH0437                     18738       0.0101                 2.1
-#> 2 NH0910                     15506       0.00302                0  
-#> # ℹ 3 more variables: temperatura_maxima <dbl>, temperatura_promedio <dbl>,
-#> #   desviacion_estandar <dbl>
 ```
+
+### Autores del paquete:
+
+-   [Matias Fasolato](https://github.com/MatiFasolato)\
+    Estudiante de Ciencia de datos en la Universidad Austral de la ciudad de Rosario
+
+-   [Bautista Torregiani](https://github.com/BautistaTorregiani)\
+    Estudiante de Ciencia de datos en la Universidad Austral de la ciudad de Rosario
+
+### Contribuciones al paquete
+
+Si deseas realizar contribuciones al paquete, ya sea para agregar mejoras, corregir errores o proponer nuevas funciones, segui los siguientes pasos:
+
+1.  **Fork y clona el repositorio**: Haz un *fork* de este repositorio en tu cuenta de GitHub y clona el repositorio en tu máquina local.
+
+2.  **Realiza la contribución y hace un pull request**: Realiza los cambios que consideres necesarios en tu copia del repositorio. Luego, abri un *pull request* a la rama principal del proyecto con una descripción clara del propósito de tu contribución.
+
+Si tenes dudas o necesitas ayuda con el proceso de contribución, no dudes en contactarnos a través de los siguientes correos electrónicos:
+
+\- **Fasolato Matias**: [mfasolato\@mail.austral.edu.ar](mailto:mfasolato@mail.austral.edu.ar){.email}
+
+\- **Torregiani Bautista**: [btorregiani\@mail.austral.edu.ar](mailto:btorregiani@mail.austral.edu.ar){.email}
+
+#### Codigo de contribución:
+
+<https://github.com/MatiFasolato/meteorodata/blob/master/.github/CONTRIBUTING.md>

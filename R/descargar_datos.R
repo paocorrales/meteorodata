@@ -1,6 +1,6 @@
 #' Descarga de datos de distintas estaciones
 #'
-#' La funcion `descargar_datos()` toma 2 parametros y permite la lectura y/o
+#' La funcion `descargar_datos()` toma 1 parametro y permite la lectura y/o
 #'    descarga del dataset de la estacion que se solicite.
 #'
 #' Estaciones Disponibles:

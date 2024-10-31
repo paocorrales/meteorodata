@@ -95,9 +95,9 @@ Si deseas realizar contribuciones al paquete, ya sea para agregar mejoras, corre
 
 Si tenes dudas o necesitas ayuda con el proceso de contribución, no dudes en contactarnos a través de los siguientes correos electrónicos:
 
-\- **Fasolato Matias**: [mfasolato\@mail.austral.edu.ar](mailto:mfasolato@mail.austral.edu.ar){.email}
+\- **Fasolato Matias**: [mfasolato\@mail.austral.edu.ar](mailto:mfasolato@mail.austral.edu.ar)
 
-\- **Torregiani Bautista**: [btorregiani\@mail.austral.edu.ar](mailto:btorregiani@mail.austral.edu.ar){.email}
+\- **Torregiani Bautista**: [btorregiani\@mail.austral.edu.ar](mailto:btorregiani@mail.austral.edu.ar)
 
 #### Codigo de contribución:
 

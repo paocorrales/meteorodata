@@ -42,10 +42,13 @@ Para llevar a cabo la descarga de los datasets referidos a las estaciones meteor
 
 ### Funciones:
 
-1.  **`C_to_F`**: Toma un valor numérico de la temperatura en Centigrados y calcula la equivalencia en grados fahrenheit.
-2.  **`F_to_C`** : Toma un valor numérico de la temperatura en Fahrenheit y calcula la equivalencia en grados centígrados.
-3.  **`tabla_resumen_temperatura`**: Recibe un dataframe que contiene informacion acerca de todas las estaciones meteorologicas y de acuerdo a la estacion especificada calcula medidas significativas.
-4.  **`grafico_temperatura_mensual`**: Recibe un data frame con datos de una o mas estaciones y devuelve un grafico con el promedio mensual de la temperatura de abrigo a 150 cm.
+1.  **`C_to_F`**: Esta función recibe como entrada un valor numérico que representa la temperatura en grados Celsiud y convierte dicha temperatura en su equivalente a grados Fahrenheit. La función valida primero que el valor de entrada sea un numero, ya que si no lo es nos devuelve un mensaje de error indicando que se debe ingresar un valor numerico. Para obtener la equivalencia a grados Fahrenheit, la funcion utiliza la formula: (temp_centigrado x $\frac{9}{5}$) + 32, donde temp_centigrado representa a la temperatura en Celcius.
+
+2.  **`F_to_C`** : Esta función recibe un valor numérico que representa la temperatura en grados Fahrenheit y convierte dicha temperatura en su equivalente a grados Celsius. La función valida primero que el valor de entrada sea numérico, ya que si no lo es, genera un mensaje de error . La fórmula utilizada para obtener la temperatura en Celsius es : (temp_fahrenheit - 32) x $\frac{5}{9}$ , donde temp_fahrenheit representa a la temperatura en Fahrenheit.
+
+3.  **`tabla_resumen_temperatura`**: Esta función recibe un dataframe que contiene informacion acerca de todas las estaciones meteorologicas y de acuerdo a la estacion especificada calcula medidas significativas, como son el promedio (media), mínimo, máximo, mediana y desviación estándar de la temperatura y otras variables relevantes. El resultado devuelto es una tabla resumen con estas métricas, que permite comparar los datos climáticos de diferentes estaciones
+
+4.  **`grafico_temperatura_mensual`**: Esta función recibe un data frame con datos de una o mas estaciones y agrupa los datos por mes y calcula el promedio de la temperatura para cada mes, lo que permite observar tendencias y variaciones a lo largo del año. Luego, genera un gráfico que muestra estos promedios mensuales, con el eje x representando los meses y el eje y la temperatura promedio en grados Celsius.
 
 ## Ejemplo
 
@@ -55,27 +58,15 @@ Este es un ejemplo básico que muestra cómo instalar la librería del paquete:
 library(meteorodata)
 ```
 
-## Uso de las funciones:
+## Uso de funciones:
+
+#### A continuacion se mostrará un ejemplo de como hacer uso de las función `F_to_C()` :
 
 ```{r}
 F_to_C(100)
 ```
 
-```{r}
-estacion_met <- descargar_datos("NH0098")
-```
-
-```{r}
-C_to_F(23)
-```
-
-```{r}
-grafico_temperatura_mensual(NH_unidos)
-```
-
-```{r}
-tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))
-```
+Si desea ver el uso de las funciones restantes puede ingresar a nuestra página: [meteorodata](https://matifasolato.github.io/meteorodata/)
 
 ### Autores del paquete:
 

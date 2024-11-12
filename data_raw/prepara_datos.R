@@ -15,7 +15,7 @@ preparar_datos_estaciones <- function(ids_estaciones) {
   # Unir todos los datasets en un solo dataframe:
   NH_unidos <- dplyr::bind_rows(lista_datos, .id = "id_estacion")
 
-  return(datos_completos)
+  return(NH_unidos)
 }
 
 # Ejecutar la función para preparar y combinar los datos de las estaciones
